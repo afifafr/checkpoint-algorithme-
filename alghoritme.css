@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Analyze Phrase</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #results {
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        // Le JavaScript reste inchangé (voir l'exemple précédent)
+    </script>
+</head>
+<body>
+    <h1>Analyze Phrase</h1>
+    <p>Enter a sentence ending with a period:</p>
+    <input type="text" id="phraseInput" placeholder="Enter your sentence...">
+    <br><br>
+    <button onclick="analyzePhrase()">Analyze</button>
+    <br><br>
+    <div id="results"></div>
+</body>
+</html>

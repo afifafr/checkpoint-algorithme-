@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Analyze Phrase</title>
+    <script>
+        function analyzePhrase() {
+            // Step 1: Get input from the user
+            const phrase = document.getElementById("phraseInput").value;
+
+            // Step 2: Calculate the length of the phrase (excluding the final period)
+            let length = 0;
+            let i = 0;
+            while (i < phrase.length && phrase[i] !== '.') {
+                length++;
+                i++;
+            }
+
+            // Step 3: Split the phrase into words
+            const mots = [];
+            let word = "";
+            for (i = 0; i < length; i++) {
+                if (phrase[i] !== ' ') {
+                    word += phrase[i];
+                } else {
+                    mots.push(word);
+                    word = "";
+                }
+            }
+            mots.push(word); // Add the last word
+
+            // Step 4: Calculate the number of words
+            const nombreMots = mots.length;
+
+            // Step 5: Count the number of vowels in the phrase
+            let nombreVoyelles = 0;
+            for (i = 0; i < length; i++) {
+                if ("aeiouAEIOU".includes(phrase[i])) {
+                    nombreVoyelles++;
+                }
+            }
+
+            // Step 6: Display the results
+            document.getElementById("results").innerHTML = `
+                Length of the sentence: ${length}<br>
+                Number of words: ${nombreMots}<br>
+                Number of vowels: ${nombreVoyelles}
+            `;
+        }
+    </script>
+</head>
+<body>
+    <h1>Analyze Phrase</h1>
+    <p>Enter a sentence ending with a period:</p>
+    <input type="text" id="phraseInput" style="width: 100%;" placeholder="Enter your sentence...">
+    <br><br>
+    <button onclick="analyzePhrase()">Analyze</button>
+    <br><br>
+    <div id="results"></div>
+</body>
+</html>
